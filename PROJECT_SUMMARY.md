@@ -41,7 +41,7 @@ Your elegant catering website has been successfully created with all the feature
 - Progress indicator
 - Service selection with pricing
 - Automatic cost calculation
-- Ready for payment gateway integration
+- Confirmation message upon submission
 
 ### 6. **Navigation & Footer**
 - Sticky navigation that changes on scroll
@@ -96,7 +96,7 @@ shubbies-catering-website/
 
 2. **Install Dependencies**
    ```bash
-   npm install framer-motion react-icons @supabase/supabase-js
+   npm install framer-motion react-icons
    ```
 
 3. **Add Images**
@@ -117,42 +117,36 @@ shubbies-catering-website/
 
 ### Soon (For Full Functionality):
 
-6. **Set Up Supabase** (for storing bookings and inquiries)
-   - Create account at supabase.com
-   - Create database tables (SQL provided in SETUP_GUIDE.md)
-   - Add credentials to `.env.local`
+6. **Set Up Email Notifications** (optional - to receive booking inquiries)
+   - Use EmailJS, SendGrid, or Resend
+   - Or integrate with Google Forms
+   - Or add WhatsApp direct booking
 
-7. **Integrate Payment Gateway**
-   - Recommended: PayFast (South African)
-   - Alternative: Paystack, Stripe
-   - Add integration in `app/booking/page.tsx`
-
-8. **Deploy to Vercel** (free hosting)
+7. **Deploy to Vercel** (free hosting)
    - Push code to GitHub
    - Connect to Vercel
    - Deploy in minutes
 
 ### Optional (Enhancements):
 
-9. **Add Email Notifications**
-   - Use SendGrid, Resend, or Mailgun
-   - Send confirmation emails for bookings
-   - Notify you of new inquiries
+8. **Connect Custom Domain**
+   - Purchase domain (e.g., shubbiescatering.co.za)
+   - Connect to Vercel
+   - Set up SSL (automatic with Vercel)
 
-10. **Connect Custom Domain**
-    - Purchase domain (e.g., shubbiescatering.co.za)
-    - Connect to Vercel
-    - Set up SSL (automatic with Vercel)
+9. **Add More Features**
+   - Customer testimonials section
+   - Blog for catering tips
+   - Photo gallery with lightbox
+   - Social media feed integration
 
 ## 💰 Estimated Costs
 
 - **Website Hosting**: FREE (Vercel)
-- **Database**: FREE (Supabase free tier)
-- **Domain Name**: ~R150-300/year
-- **Payment Gateway**: Transaction fees only (PayFast: 2.9% + R2)
-- **Email Service**: FREE tier available (SendGrid, Resend)
+- **Domain Name**: ~R150-300/year (optional)
+- **Email Service**: FREE tier available (EmailJS, SendGrid, Resend)
 
-**Total to get started: R0-300/year** (just domain name)
+**Total to get started: R0-300/year** (domain is optional)
 
 ## 📊 Features Comparison
 

@@ -9,8 +9,7 @@ An elegant and classy website for Shubbies Catering and Decor, a premium South A
 - 📖 **About & Services**: Detailed information about the business and services offered
 - 🖼️ **Portfolio Gallery**: Filterable gallery to showcase your events by category
 - 📝 **Contact Form**: Easy-to-use contact form for inquiries
-- 🎫 **Booking System**: Multi-step booking form with service selection
-- 💳 **Payment Integration**: Ready for payment gateway integration (PayFast, Paystack, etc.)
+- 🎫 **Booking System**: Multi-step booking form with service selection and cost estimation
 - 📱 **Fully Responsive**: Works beautifully on all devices
 - ⚡ **Fast Performance**: Built with Next.js 14 and optimized for speed
 
@@ -20,7 +19,6 @@ An elegant and classy website for Shubbies Catering and Decor, a premium South A
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4
 - **Fonts**: Playfair Display (headings) & Montserrat (body)
-- **Database**: Supabase (ready to integrate)
 - **Deployment**: Vercel (recommended)
 
 ## Getting Started
@@ -48,6 +46,7 @@ An elegant and classy website for Shubbies Catering and Decor, a premium South A
 3. **Install dependencies**
    ```bash
    npm install
+   npm install framer-motion react-icons
    ```
 
 4. **Add your images**
@@ -64,18 +63,6 @@ An elegant and classy website for Shubbies Catering and Decor, a premium South A
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Configuration
-
-### Environment Variables
-
-1. Copy `.env.example` to `.env.local`:
-   ```bash
-   cp .env.example .env.local
-   ```
-
-2. Fill in your credentials:
-   - Supabase URL and API key
-   - Payment gateway credentials
-   - Email service API key
 
 ### Adding Images
 
@@ -101,30 +88,21 @@ Update contact details in:
 - `app/components/ContactSection.tsx`
 - `app/components/Footer.tsx`
 
-## Setting Up Supabase (Optional)
+## How Bookings Work
 
-1. **Create a Supabase project** at [supabase.com](https://supabase.com)
+Currently, the booking system:
+1. Collects customer information through a 4-step form
+2. Calculates estimated costs based on services selected
+3. Logs the booking data to the browser console
+4. Shows a confirmation message to the customer
 
-2. **Create the database tables** using the schema in `lib/supabase.ts`
+**To receive booking notifications**, you can:
+- Integrate an email service (EmailJS, SendGrid, Resend)
+- Use Google Forms integration
+- Add a WhatsApp direct booking option
+- Set up a backend service to store bookings
 
-3. **Add environment variables** to `.env.local`
-
-4. **Uncomment Supabase code** in `lib/supabase.ts`
-
-5. **Install Supabase client**:
-   ```bash
-   npm install @supabase/supabase-js
-   ```
-
-## Payment Integration
-
-The booking system is ready for payment gateway integration. Popular South African options:
-
-- **PayFast**: https://www.payfast.co.za
-- **Paystack**: https://paystack.com
-- **Stripe**: https://stripe.com
-
-Add your payment gateway integration in `app/booking/page.tsx` in the `handleSubmit` function.
+See `SETUP_GUIDE.md` for detailed options.
 
 ## Deployment
 
@@ -172,7 +150,8 @@ shubbies-catering-website/
 
 For questions or support, contact:
 - Email: info@shubbiescatering.co.za
-- Phone: +27 XX XXX XXXX
+- Phone: 074 208 6850
+- Contact: Mkhululi Shezi
 
 ## License
 

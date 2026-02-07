@@ -32,13 +32,14 @@ Use this checklist to get your website up and running!
 **Need images?** Use Unsplash.com or Pexels.com for temporary placeholders
 
 ### Step 4: Update Contact Information
-- [ ] Open `app/components/ContactSection.tsx`
-  - [ ] Replace `+27 XX XXX XXXX` with your phone number
-  - [ ] Replace `info@shubbiescatering.co.za` with your email
-- [ ] Open `app/components/Footer.tsx`
-  - [ ] Update WhatsApp number (line 82): Replace `27XXXXXXXXX`
-  - [ ] Update Facebook link (line 52)
-  - [ ] Update Instagram link (line 63)
+- [x] Open `app/components/ContactSection.tsx`
+  - [x] Phone: 074 208 6850
+  - [x] Email: info@shubbiescatering.co.za
+  - [x] Name: Mkhululi Shezi
+- [x] Open `app/components/Footer.tsx`
+  - [x] WhatsApp number updated: 27742086850
+  - [ ] Update Facebook link (line 52) - Add your Facebook page URL
+  - [ ] Update Instagram link (line 63) - Add your Instagram profile URL
 
 ### Step 5: Test Locally
 - [ ] Run: `npm run dev`

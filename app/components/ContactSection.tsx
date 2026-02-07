@@ -26,13 +26,17 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // TODO: Integrate with Supabase or email service
+
     try {
-      // Simulate API call
+      // Log form data for now
+      console.log('Contact form submitted:', formData);
+
+      // Simulate submission delay
       await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', formData);
+
       setSubmitStatus('success');
+
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -73,7 +77,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Phone</h3>
-                  <p className="text-gray-700">+27 XX XXX XXXX</p>
+                  <p className="text-gray-700">074 208 6850</p>
+                  <p className="text-gray-600 text-sm mt-1">Mkhululi Shezi</p>
                 </div>
               </div>
 

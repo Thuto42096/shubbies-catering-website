@@ -69,12 +69,33 @@ export default function BookingPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // TODO: Integrate with Supabase and payment gateway
+
+    // Log booking data for now
     console.log('Booking submitted:', bookingData);
-    
-    // Redirect to payment or confirmation
-    alert('Booking submitted! You will be redirected to payment.');
+
+    // Show success message
+    alert('Thank you for your booking request! We will contact you shortly to confirm your event details and discuss payment options.');
+
+    // Reset form
+    setBookingData({
+      fullName: '',
+      email: '',
+      phone: '',
+      eventType: '',
+      eventDate: '',
+      eventTime: '',
+      venue: '',
+      numberOfGuests: 0,
+      cateringService: false,
+      decorService: false,
+      fullPlanningService: false,
+      dietaryRequirements: '',
+      specialRequests: '',
+      budget: '',
+    });
+
+    // Go back to step 1
+    setStep(1);
   };
 
   const calculateEstimate = () => {
@@ -442,8 +463,8 @@ export default function BookingPage() {
 
                 <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
                   <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> A 30% deposit is required to confirm your booking.
-                    You will be redirected to our secure payment page after submission.
+                    <strong>Note:</strong> This is a booking request. We will contact you within 24 hours
+                    to confirm availability and discuss payment arrangements.
                   </p>
                 </div>
               </div>
@@ -474,7 +495,7 @@ export default function BookingPage() {
                   type="submit"
                   className="ml-auto px-8 py-3 bg-gold hover:bg-gold-dark text-white rounded-lg font-bold transition-colors"
                 >
-                  Proceed to Payment
+                  Submit Booking Request
                 </button>
               )}
             </div>

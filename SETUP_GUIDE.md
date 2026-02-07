@@ -16,7 +16,7 @@ Before you can run npm commands, you need to fix the PowerShell execution policy
 Now you can install the required packages:
 
 ```bash
-npm install framer-motion react-icons @supabase/supabase-js
+npm install framer-motion react-icons
 ```
 
 ## Step 3: Add Your Images
@@ -39,17 +39,18 @@ Download high-quality images and save them with the exact names above in the `pu
 
 ## Step 4: Update Contact Information
 
-Edit these files to add your real contact details:
+✅ **Contact details have been updated:**
 
 ### `app/components/ContactSection.tsx`
-Find and replace:
-- `+27 XX XXX XXXX` with your phone number
-- `info@shubbiescatering.co.za` with your email
+- Phone: 074 208 6850
+- Email: info@shubbiescatering.co.za
+- Name: Mkhululi Shezi
 
 ### `app/components/Footer.tsx`
-Update the WhatsApp link:
-- Replace `27XXXXXXXXX` with your WhatsApp number (format: 27821234567)
-- Update social media links (Facebook, Instagram)
+- WhatsApp: 27742086850 (already updated)
+- **Still need to update:**
+  - Facebook page URL (currently placeholder)
+  - Instagram profile URL (currently placeholder)
 
 ## Step 5: Run the Development Server
 
@@ -71,59 +72,33 @@ To change the gold color scheme, edit `app/globals.css`:
 }
 ```
 
-## Step 7: Set Up Supabase (For Database & Bookings)
+## Step 7: How Bookings Work
 
-1. Go to https://supabase.com and create a free account
-2. Create a new project
-3. Go to Project Settings → API
-4. Copy your project URL and anon key
-5. Create a `.env.local` file in the root directory:
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your_project_url_here
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
-   ```
-6. In Supabase, go to SQL Editor and create these tables:
+The booking system currently works as follows:
 
-```sql
--- Contact Inquiries Table
-CREATE TABLE contact_inquiries (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  phone TEXT NOT NULL,
-  event_date DATE,
-  event_type TEXT,
-  guests INTEGER,
-  message TEXT,
-  created_at TIMESTAMP DEFAULT NOW()
-);
+1. **Customer fills out the booking form** (4 steps)
+2. **Form data is logged to browser console** (you can see it in browser dev tools)
+3. **Customer receives confirmation message**
+4. **You contact them within 24 hours** to confirm details and arrange payment
 
--- Bookings Table
-CREATE TABLE bookings (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  full_name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  phone TEXT NOT NULL,
-  event_type TEXT NOT NULL,
-  event_date DATE NOT NULL,
-  event_time TIME NOT NULL,
-  venue TEXT NOT NULL,
-  number_of_guests INTEGER NOT NULL,
-  catering_service BOOLEAN DEFAULT FALSE,
-  decor_service BOOLEAN DEFAULT FALSE,
-  full_planning_service BOOLEAN DEFAULT FALSE,
-  dietary_requirements TEXT,
-  special_requests TEXT,
-  budget TEXT,
-  estimated_total NUMERIC,
-  payment_status TEXT DEFAULT 'pending',
-  booking_status TEXT DEFAULT 'pending',
-  created_at TIMESTAMP DEFAULT NOW(),
-  updated_at TIMESTAMP DEFAULT NOW()
-);
-```
+### To Receive Booking Notifications:
 
-7. Uncomment the Supabase code in `lib/supabase.ts`
+For now, you'll need to check the browser console logs or implement one of these solutions:
+
+**Option A: Email Integration (Recommended)**
+- Use a service like EmailJS, SendGrid, or Resend
+- Forms will email you directly when submitted
+- No database needed
+
+**Option B: Google Forms Integration**
+- Create a Google Form with the same fields
+- Link to it from your booking page
+- Responses go to Google Sheets
+
+**Option C: WhatsApp Direct Link**
+- Add a "Book via WhatsApp" button
+- Pre-fills message with booking details
+- Direct communication with customers
 
 ## Step 8: Deploy to Vercel (Free Hosting)
 
