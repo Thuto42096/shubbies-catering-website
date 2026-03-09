@@ -13,19 +13,19 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    image: '/images/slide1.jpg',
+    image: '/images/slide1.jpeg',
     title: 'Elegant Catering',
     subtitle: 'Creating Unforgettable Moments',
   },
   {
     id: 2,
-    image: '/images/slide2.jpg',
+    image: '/images/slide2.jpeg',
     title: 'Exquisite Decor',
     subtitle: 'Transforming Spaces with Style',
   },
   {
     id: 3,
-    image: '/images/slide3.jpg',
+    image: '/images/slide3.jpeg',
     title: 'Premium Service',
     subtitle: 'Excellence in Every Detail',
   },
